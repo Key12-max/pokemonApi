@@ -1,25 +1,25 @@
 
 import React, {useEffect, useState} from 'react';
+import axios from "axios";
 
 const PokmonApi = () => {
-    const[pokemon, setPokemon]= useState([])
 
+    const[pokemon, setPokemon]= useState([])
     useEffect(()=>{
-        fetch('https://pokeapi.co/api/v2/pokemon?limit=807')
-        .then(response=>{
-            return response.json()
-        })
-        .then(response=>{
-            setPokemon(response.results)
+        axios
+        .get('https://pokeapi.co/api/v2/pokemon?limit=807')
+        .then((response)=>{
+        console.log(response.data.results);
+        setPokemon(response.data.results);
         })
         .catch((error)=>{
             console.log(error);
         })
     }, [])
-     // The empty array as the second parameter makes it so that useEffect 
-  //    does NOT run more than once
     return (
+        
         <div>
+                {<h1>Axios Pokemon API</h1>}
             <ul>
                 {
                     pokemon.map((pokemonObj, index)=>{

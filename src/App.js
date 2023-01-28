@@ -1,9 +1,11 @@
 import './App.css';
+
+import React from 'react';
 import PokmonApi from './components/PokmonApi';
 
-function App() {
+const App = () => {
   return (
-    <div className="App" style={{width: "200px", margin:"auto"}}>
+    <div className="App" style={{width:"200px", margin:"auto"}}>
       <PokmonApi/>
     </div>
   );
