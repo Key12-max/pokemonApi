@@ -2,7 +2,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 
-const PokmonApi = () => {
+const AxiosPokmonApi = () => {
 
     const[pokemon, setPokemon]= useState([])
     useEffect(()=>{
@@ -31,4 +31,4 @@ const PokmonApi = () => {
     );
 }
 
-export default PokmonApi;
+export default AxiosPokmonApi;
